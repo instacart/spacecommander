@@ -14,7 +14,7 @@ fi
 
 # "#pragma Formatter Exempt" or "// MARK: Formatter Exempt" means don't format this file.
 # Read the first line and trim it.
-line="$(head -1 "$1" | xargs)" 
+line="$(head -1 "$1" | xargs)"
 [ "$line" == "#pragma Formatter Exempt" -o "$line" == "// MARK: Formatter Exempt" ] && exit 0
 
 # Fix an edge case with array / dictionary literals that confuses clang-format
@@ -23,8 +23,6 @@ python "$DIR"/custom/LiteralSymbolSpacer.py "$1"
 python "$DIR"/custom/InlineConstructorOnSingleLine.py "$1"
 # Add a semicolon at the end of simple macros
 python "$DIR"/custom/MacroSemicolonAppender.py "$1"
-# Add an extra newline before @implementation and @interface
-python "$DIR"/custom/DoubleNewlineInserter.py "$1"
 
 # Run clang-format
 "$DIR"/bin/clang-format-3.8-custom -i -style=file "$1" ;
