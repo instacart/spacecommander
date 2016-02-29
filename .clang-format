@@ -59,7 +59,7 @@ IndentWidth:     4
 TabWidth:        8
 UseTab:          Never
 BreakBeforeBraces: Custom
-BraceWrapping: 
+BraceWrapping:
     AfterClass: true
     AfterControlStatement: false
     AfterEnum: false
@@ -85,6 +85,6 @@ ContinuationIndentWidth: 4
 CommentPragmas:  '^ IWYU pragma:'
 ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
 SpaceBeforeParens: ControlStatements
-DisableFormat:   false
+DisableFormat:   true
 ...
 
