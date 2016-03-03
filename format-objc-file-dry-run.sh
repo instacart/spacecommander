@@ -18,6 +18,8 @@ python "$DIR"/custom/LiteralSymbolSpacer.py | \
 python "$DIR"/custom/InlineConstructorOnSingleLine.py | \
 python "$DIR"/custom/MacroSemicolonAppender.py | \
 "$DIR"/bin/clang-format-3.8-custom -style=file | \
+python "$DIR"/custom/GenericCategoryLinebreakIndentation.py | \
+python "$DIR"/custom/ParameterAfterBlockNewline.py | \
 python "$DIR"/custom/HasIncludeSpaceRemover.py | \
 python "$DIR"/custom/NewLineAtEndOfFileInserter.py
 
